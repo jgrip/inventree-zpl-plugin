@@ -73,7 +73,7 @@ class ZPLLabelPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugin):
             print(f"ZPL: Unsupported label type: {label_instance.SUBDIR}")
 
         templ_path = os.path.join(
-            self.get_setting("TEMPLATE_PATH"), label_instance.SUBDIR
+            self.get_setting("TEMPLATES_PATH"), label_instance.SUBDIR + ".j2"
         )
 
         label = kwargs["label_instance"].object_to_print
